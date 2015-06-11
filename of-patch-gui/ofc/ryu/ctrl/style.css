@@ -1,0 +1,180 @@
+body {
+  margin: 0;
+  padding: 0;
+  font: 300 36px "Helvetica Neue";
+  position: relative;
+}
+
+.wrapper {
+  width:100%;
+  height:100%;
+}
+
+.notification_area {
+  top: 3px;
+  margin-left: 300px;
+  position:absolute;
+  font-size:10px;
+  font-weight: bold;
+  color: red;
+}
+
+.search_title {
+  margin-top: 5px;
+  margin-left: 5px;
+  position:relative;
+  font-size:20px;
+}
+
+.tension_title {
+  margin-left: 5px;
+  position:relative;
+  font-size:20px;
+}
+
+.tension_bar {
+  position:relative;
+  top:3px;
+}
+
+.button_area {
+  margin-left: 5px;
+  position:relative;
+}
+
+.of_patch_area {
+  width:100%;
+  height:100%;
+}
+
+.popup-box {
+  position: absolute;
+  display: inline-block;
+  padding: 2px;
+  background: lightsteelblue;
+  font-size: 12px;
+  border: 0px;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.svg_area {
+  width:100%;
+  height:100%;
+  position: absolute;
+  top:3px;
+}
+
+path.arc {
+  cursor: move;
+  fill: #fff;
+}
+
+.arc.rotating-operation-ring {
+  fill: #f0f5f5;
+}
+
+.nodeArc {
+  fill: #48b3d6;
+  stroke: #f0f5f5;
+  stroke-width: 2px;
+}
+
+.nodeArc.Server, .portArc.Server {
+  fill: #48b3d6;
+}
+
+.nodeArc.Switch, .portArc.Switch {
+  fill: #b080d4;
+}
+
+.nodeArc.highlight {
+  fill: #f77777;
+}
+
+.portArc {
+  fill: #48b3d6;
+  stroke: #f0f5f5;
+  stroke-width: 2px;
+}
+
+.portArc.used {
+  fill: #aaaaaa;
+}
+
+.portArc.highlight, .portArc.selected {
+  fill: #f77777;
+}
+
+.portText {
+  fill: white;
+  fill-opacity: 1;
+//  font-weight: bold;
+  pointer-events: none;
+}
+
+.link {
+  fill: none;
+  stroke: #1f77b4;
+  stroke-opacity: .7;
+  stroke-width: 2px;
+}
+
+.link.highlight, .link.source, .link.target {
+  stroke-opacity: 1;
+  stroke-width: 2px;
+  stroke: red;
+}
+
+/*
+.node:hover {
+  fill: red;
+  font-weight: bold;
+}
+*/
+.node.highlight {
+  fill: red;
+  font-weight: bold;
+}
+
+.node.source {
+  fill: blue;
+  font-weight: bold;
+}
+
+.node.target {
+  fill: blue;
+  font-weight: bold;
+}
+
+.progress{
+    display:none;
+    position: absolute;
+//    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.progress:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+
+.center{
+    //text-align: center; 
+    margin: 0 auto;
+//  display: inline-block;
+    vertical-align:middle;
+}

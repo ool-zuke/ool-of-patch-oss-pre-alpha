@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Transitional//EN” “http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd”>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <script type="text/javascript" src="d3/d3.v2.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="ofp/circle_main.js"></script>
+    <input type="hidden" class="mode" value="Circle, Port to Port"></input>
+    <div class="wrapper">
+        <div id="of_patch_area_wrapper">
+            <div class="of_patch_area">
+                <svg class="svg_area"></svg>
+                <div class="notification_area"></div>
+<!--
+                <div class="search_title">Search: <input class="search_text" type="text"></div>
+-->
+                <div class="tension_title">Line tension: <input class="tension_bar" type="range" min="0" max="100" value="85"></div>
+                <div class="button_area">
+                    <input class="undo" type="button" value="Undo"></input>
+                    <input class="redo" type="button" value="Redo"></input>
+                    <input class="commit" type="button" value="Commit"></input>
+                    <input class="cancel" type="button" value="Cancel"></input>
+                </div>
+            </div>
+        </div>
+        <div class="progress">
+            <img src="img/progress.gif" class="center">
+        </div>
+    </div>
+  </body>
+</html>
