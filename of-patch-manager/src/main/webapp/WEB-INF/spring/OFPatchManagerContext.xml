@@ -10,7 +10,7 @@
 
 	<import resource="classpath:META-INF/cxf/cxf.xml" />
 
-	<context:component-scan base-package="ool.com.ofpm.jaxrs" />
+	<context:component-scan base-package="org.okinawaopenlabs.ofpm.jaxrs" />
 
 	<jaxrs:server id="ofp-manager" address="/">
 		<jaxrs:serviceBeans>
@@ -20,7 +20,7 @@
 		</jaxrs:serviceBeans>
 	</jaxrs:server>
 
-	<bean id="device_srv" class="ool.com.ofpm.service.DeviceServiceImpl" />
-	<bean id="logi_srv" class="ool.com.ofpm.service.LogicalServiceImpl" />
-	<bean id="phys_srv" class="ool.com.ofpm.service.PhysicalServiceImpl" />
+	<bean id="device_srv" class="org.okinawaopenlabs.ofpm.service.DeviceServiceImpl" />
+	<bean id="logi_srv" class="org.okinawaopenlabs.ofpm.service.LogicalServiceImpl" />
+	<bean id="phys_srv" class="org.okinawaopenlabs.ofpm.service.PhysicalServiceImpl" />
 </beans>
