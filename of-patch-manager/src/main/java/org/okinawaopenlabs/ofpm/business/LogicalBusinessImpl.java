@@ -35,11 +35,11 @@ import org.okinawaopenlabs.ofpm.json.ofc.InitFlowIn;
 import org.okinawaopenlabs.ofpm.json.ofc.SetFlowIn;
 import org.okinawaopenlabs.ofpm.json.topology.logical.LogicalLink;
 import org.okinawaopenlabs.ofpm.json.topology.logical.LogicalTopology;
+import org.okinawaopenlabs.ofpm.json.topology.logical.LogicalTopology.OfpConDeviceInfo;
+import org.okinawaopenlabs.ofpm.json.topology.logical.LogicalTopology.OfpConPortInfo;
 import org.okinawaopenlabs.ofpm.json.topology.logical.LogicalTopologyGetJsonOut;
 import org.okinawaopenlabs.ofpm.json.topology.logical.LogicalTopologyUpdateJsonIn;
 import org.okinawaopenlabs.ofpm.json.topology.logical.LogicalTopologyUpdateJsonOut;
-import org.okinawaopenlabs.ofpm.json.topology.logical.LogicalTopology.OfpConDeviceInfo;
-import org.okinawaopenlabs.ofpm.json.topology.logical.LogicalTopology.OfpConPortInfo;
 import org.okinawaopenlabs.ofpm.utils.Config;
 import org.okinawaopenlabs.ofpm.utils.ConfigImpl;
 import org.okinawaopenlabs.ofpm.utils.OFPMUtils;
@@ -825,7 +825,7 @@ public class LogicalBusinessImpl implements LogicalBusiness {
 	private long calcReduceCableLinkUsed(Connection conn, Map<String, Object> link, long band) throws SQLException {
 		final String fname = "updateCableLinkUsed";
 		if (logger.isDebugEnabled()) {
-			logger.debug(String.format("%s(conn=%s, link=%s, client=%s, ofpmToken=%s) - start", fname, conn, link));
+			logger.debug(String.format("%s(conn=%s, link=%s, band=%d) - start", fname, conn, link, band));
 		}
 		long used = (Long)link.get("used");
 		long inBand = this.getBandWidth(conn, (String)link.get("inDeviceName"), (String)link.get("inPortName"));
