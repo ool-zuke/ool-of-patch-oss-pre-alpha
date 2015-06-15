@@ -2,12 +2,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>ool.com</groupId>
+  <groupId>org.okinawaopenlabs</groupId>
   <packaging>war</packaging>
   <version>0.1</version>
-  <name>OFPatchManager Maven Webapp</name>
+  <name>of-patch-manager Maven Webapp</name>
   <url>http://maven.apache.org</url>
-  <artifactId>OFPatchManager</artifactId>
+  <artifactId>of-patch-manager</artifactId>
 
   <dependencies>
     <dependency>
@@ -129,7 +129,7 @@
   </repositories>
 
   <build>
-    <finalName>OFPatchManager</finalName>
+    <finalName>of-patch-manager</finalName>
     <plugins>
         <plugin>
             <artifactId>maven-compiler-plugin</artifactId>
