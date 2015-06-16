@@ -48,7 +48,7 @@ class OfPatchOfc(app_manager.RyuApp):
 
 		datapath = ev.msg.datapath
 		self.switches[datapath.id] = datapath
-		LOG.info('Switch is joined : ' + str(hex(datapath.id)))
+		LOG.info('Switch is joined : ' + "{:0>16x}".format(datapath.id))
 
 		# set table-miss flow entry. Default:All Drop
 		ofproto = datapath.ofproto
@@ -58,13 +58,6 @@ class OfPatchOfc(app_manager.RyuApp):
 		self.add_flow(datapath, define.FLOW_PRIORITY_DROP, define.FLOW_IDLE_TIMEOUT_NO_LIMIT, define.FLOW_HARD_TIMEOUT_NO_LIMIT, match, actions);
 
 		self.ofpmClient.init_flow(datapath.id)
-
-#		dpid = hex(datapath.id)
-#		LOG.info('dpid = ' + str(dpid))
-#		if str(dpid) == "0x5e3e089e01e99558":
-#			LOG.info('dpid == 0x5e3e089e01e99558')
-#			for i in range(51,60):
-#				self.ofpmClient.set_flow(datapath.id, 1, "00:00:00:00:00:"+str(i), "ff:ff:ff:ff:ff:ff")
 
 		LOG.debug("END")
 
@@ -97,15 +90,6 @@ class OfPatchOfc(app_manager.RyuApp):
 		# Notify packet in to ofpm.
 		self.ofpmClient.set_flow(dpid, inPort, srcMac, dstMac)
 
-		#LOG.info('delete Drop flow START : dpid=%s, inPort=%s, srcMac=%s', dpid, inPort, srcMac)
-		#match = parser.OFPMatch(in_port=inPort, eth_src=srcMac)
-		#actions = []
-		#try:
-		#	self.del_flow(datapath, define.FLOW_PRIORITY_PACKET_IN_DISABLE, match, actions)
-		#except Exception as e:
-		#	LOG.error(e)
-		#LOG.info('delete Drop flow START : dpid=%s, inPort=%s, srcMac=%s', dpid, inPort, srcMac)
-
 		LOG.debug("END")
 
 	@set_ev_cls(ofp_event.EventOFPDescStatsReply, MAIN_DISPATCHER)
@@ -127,7 +111,7 @@ class OfPatchOfc(app_manager.RyuApp):
 	def add_flow(self, datapath, priority, idle_timeout, hard_timeout, match, actions):
 		LOG.debug("START")
 
-		LOG.debug("datapath.id = " + str(hex(datapath.id)) + ", priority = " + str(priority) + ", idle_timeout = " + str(idle_timeout) + ", hard_timeout = " + str(hard_timeout))
+		LOG.debug("datapath.id = " + "{:0>16x}".format(datapath.id) + ", priority = " + str(priority) + ", idle_timeout = " + str(idle_timeout) + ", hard_timeout = " + str(hard_timeout))
 		LOG.debug("match = " + str(match))
 		LOG.debug("actions = " + str(actions))
 
@@ -145,7 +129,7 @@ class OfPatchOfc(app_manager.RyuApp):
 	def del_flow(self, datapath, priority, match, actions):
 		LOG.debug("START")
 
-		LOG.debug("datapath.id = " + str(hex(datapath.id)))
+		LOG.debug("datapath.id = " + "{:0>16x}".format(datapath.id))
 		LOG.debug("priority = " + str(priority))
 		LOG.debug("match = " + str(match))
 		LOG.debug("actions = " + str(actions))

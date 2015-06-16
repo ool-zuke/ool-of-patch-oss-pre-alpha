@@ -12,18 +12,16 @@ unirest.timeout(60)
 class OfpmClient:
 
 	def set_flow(self, dpid, inPort, srcMac, dstMac):
-		dpidStr = (hex(dpid))
 		header = {'Content-type':'application/json'}
-		body = {'dpid':dpidStr[2:], 'inPort':inPort, 'srcMac':srcMac, 'dstMac':dstMac}
+		body = {'dpid':"{:0>16x}".format(dpid), 'inPort':inPort, 'srcMac':srcMac, 'dstMac':dstMac}
 		LOG.debug("body = " + str(body))
 		LOG.info("Request setFlow body = " + str(body))
 		res = unirest.post(CONF.ofpm_set_flow_url, headers=header, params=str(body), callback=self.__http_response__)
 		return 
 
 	def init_flow(self, dpid):
-		dpidStr = (hex(dpid))
 		header = {'Content-type':'application/json'}
-		body = {'datapathId':dpidStr[2:]}
+		body = {'datapathId':"{:0>16x}".format(dpid)}
 		LOG.debug("body = " + str(body))
 		LOG.info("Request initFlow body = " + str(body))
 		res = unirest.post(CONF.ofpm_init_flow_url, headers=header, params=str(body), callback=self.__http_response__)

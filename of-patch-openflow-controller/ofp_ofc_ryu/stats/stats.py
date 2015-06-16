@@ -10,7 +10,7 @@ class OfpStats:
 		self.ofpmClient = OfpmClient()
 
 	def desc_stats_reply(self, ev):
-		dpid = hex(ev.msg.datapath.id)
+		dpid = "{:0>16x}".format(ev.msg.datapath.id)
 		LOG.info('\nEventOFPDescStatsReply')
 		bodyData = json.loads(json.dumps(ev.msg.to_jsondict()))
 		bodyData.update({'dpid':dpid})
@@ -20,7 +20,7 @@ class OfpStats:
 	
 	def port_stats_reply(self, ev):
 		body = ev.msg.body
-		dpid = hex(ev.msg.datapath.id)
+		dpid = "{:0>16x}".format(ev.msg.datapath.id)
 		LOG.info('\nEventOFPPortStatsReply')
 		bodyData = json.loads(json.dumps(ev.msg.to_jsondict()))
 		bodyData.update({'dpid':dpid})
@@ -29,7 +29,7 @@ class OfpStats:
 		self.ofpmClient.set_port_stats(dpid, portStats)
 	
 	def port_desc_stats_reply(self, ev):
-		dpid = hex(ev.msg.datapath.id)
+		dpid = "{:0>16x}".format(ev.msg.datapath.id)
 		LOG.info('\nEventOFPPortDescStatsReply')
 		bodyData = json.loads(json.dumps(ev.msg.to_jsondict()))
 		bodyData.update({'dpid':dpid})
@@ -38,7 +38,7 @@ class OfpStats:
 		self.ofpmClient.set_port_desc_stats(dpid, portDescStats)
 	
 	def flow_stats_reply(self, ev):
-		dpid = hex(ev.msg.datapath.id)
+		dpid = "{:0>16x}".format(ev.msg.datapath.id)
 		LOG.info('\nEventOFPFlowStatsReply')
 		bodyData = json.loads(json.dumps(ev.msg.to_jsondict()))
 		bodyData.update({'dpid':dpid})
