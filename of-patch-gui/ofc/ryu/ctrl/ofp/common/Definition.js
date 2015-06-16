@@ -1,13 +1,18 @@
     /************************************************************************************/
+    // OF-Patch Manager Endpoint (User Setting)
+    /************************************************************************************/
+    var OFPM_URL = "http://localhost:18080/ofpm";
+
+
+    /************************************************************************************/
     // HTTPリクエスト定義
     /************************************************************************************/
     // OF-Patchマネージャ Url
-    var OFPM_URL = "http://192.168.56.101:18080/ofpm";
     var OFPM_LOGICAL_TOPOLOGY_URL = OFPM_URL + "/logical_topology";
+    var OFPM_DEVICE_MNG_URL = OFPM_URL + "/device_mng";
 
     // OF-Patch Query paramater key
     var OFPM_PARAM_KEY_DEVICENAME = "deviceNames=";
-    var OFPM_PARAM_DATA_DEVICENAME = "spine1,leaf1,leaf2,host1";
 
     /************************************************************************************/
     // 画面定義

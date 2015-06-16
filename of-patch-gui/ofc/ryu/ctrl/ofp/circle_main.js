@@ -47,12 +47,30 @@ function ofPatchGuiMain() {
 
     // Get Device name from Query param.
     var param = window.location.search.substring( 1 );
-    var diviceNames = OFPM_PARAM_DATA_DEVICENAME;
 
-    // OFP main start.
-    getTopology(diviceNames, ofPatchGuiMainExec);
+    getDeviceList(getDeviceListCallback);
 
     ofplog.log(LOG_DEBUG, "ofPatchGuiMain() - end");
+}
+
+function getDeviceListCallback(result){
+    ofplog.log(LOG_DEBUG, "getDeviceListCallback() - start");
+    var deviceList = [];
+
+    result.some(function(l, i){
+        var deviceName = l.deviceName;
+        var deviceType = l.deviceType;
+        ofplog.log(LOG_DEBUG, "getDeviceListCallback() : data : deviceName = " + deviceName + ", deviceType" + deviceType);
+
+        if ((deviceType == "Server") || (deviceType == "Switch")){
+            deviceList.push(deviceName);
+        }
+    });
+
+    // OFP main start.
+    getTopology(arrayToCsv(deviceList), ofPatchGuiMainExec);
+
+    ofplog.log(LOG_DEBUG, "getDeviceListCallback() - end");
 }
 
 function ofPatchGuiMainExec(classes){

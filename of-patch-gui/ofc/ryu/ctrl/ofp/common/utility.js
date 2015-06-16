@@ -60,13 +60,48 @@ function restRequest(type, url, contentType, data, callBackFunc) {
     ofplog.log(LOG_DEBUG, "restRequest() - end");
 }
 
+//Get Device List from OFPM.
+function getDeviceList(successFunc, errorFunc) {
+    var funcName = "getDeviceList()";
+    ofplog.log(LOG_DEBUG, funcName  + " - start : ");
+
+    restRequest("GET",
+                OFPM_DEVICE_MNG_URL,
+                "",
+                "",
+                {success : success, error : error});
+
+    function success(data, xhr, textStatus) {
+        var status = data.status;
+        var result = data.result;
+        var resultStr = JSON.stringify(result);
+        ofplog.log(LOG_DEBUG, funcName  + " - success : status = " + status + ", result = " + resultStr + ", textStatus = " + textStatus);
+        if (typeof successFunc !== "undefined") {
+            successFunc(result);
+        }
+    }
+
+    function error(xhr) {
+        ofplog.log(LOG_ERROR, funcName  + " - error : xhr = " + xhr);
+        if (typeof errorFunc !== "undefined") {
+            errorFunc(xhr);
+        }
+    }
+
+    function complete(data) {
+        ofplog.log(LOG_DEBUG, funcName  + " - complete : data = " + data);
+    }
+
+    ofplog.log(LOG_DEBUG, funcName  + " - end");
+}
+
 // Get topology from OFPM.
 function getTopology(deviceNames, successFunc, errorFunc) {
     var funcName = "getTopology()";
     ofplog.log(LOG_DEBUG, funcName  + " - start : deviceNames = " + deviceNames);
 
     restRequest("GET",
-                OFPM_LOGICAL_TOPOLOGY_URL + "?" + 
+                OFPM_LOGICAL_TOPOLOGY_URL + "?" +
                 OFPM_PARAM_KEY_DEVICENAME + deviceNames,
                 "",
                 "",
@@ -440,7 +475,7 @@ function portClick(context, port, i) {
                 var confirmMsg = "";
                 if (context.isP2PFlag) {
                     confirmMsg = CONNECT_CONFIRMATION_MSG + "\n\n" +
-                                    context.sourcePort.parentNode.deviceName + "[" + context.sourcePort.portName + "]" + 
+                                    context.sourcePort.parentNode.deviceName + "[" + context.sourcePort.portName + "]" +
                                     " <---> " + port.parentNode.deviceName + "[" + port.portName + "]";
                 } else {
                     confirmMsg = CONNECT_CONFIRMATION_MSG + "\n\n" +
@@ -814,7 +849,7 @@ function mouseover(d, context) {
         "deviceType : " + d.deviceType + "<br/>" +
         "portNum    : " + d.ports.length)
             .style("left", (d3.event.pageX + 30) + "px")
-            .style("top", (d3.event.pageY) + "px"); 
+            .style("top", (d3.event.pageY) + "px");
 }
 
 function mouseout(d, context) {
@@ -853,7 +888,7 @@ function portMouseover(p, context) {
             ".     portName:" + p.ofpPortLink.portName + "<br/>" +
             ".     portNumber:" + p.ofpPortLink.portNumber + "<br/>")
                 .style("left", (d3.event.pageX + 30) + "px")
-                .style("top", (d3.event.pageY) + "px"); 
+                .style("top", (d3.event.pageY) + "px");
     } else {
         var d = p.parentNode;
         context.popupDiv.html(
@@ -862,7 +897,7 @@ function portMouseover(p, context) {
             "deviceType : " + d.deviceType + "<br/>" +
             "portNum    : " + d.ports.length)
                 .style("left", (d3.event.pageX + 30) + "px")
-                .style("top", (d3.event.pageY) + "px"); 
+                .style("top", (d3.event.pageY) + "px");
     }
 }
 
@@ -883,7 +918,7 @@ function linkMouseover(l, context) {
         .style("opacity", .9);
     context.popupDiv.html(l.source.parentNode.deviceName + "[" + l.source.portName + "] <---> " + l.target.parentNode.deviceName + "[" + l.target.portName + "]")
             .style("left", (d3.event.pageX + 30) + "px")
-            .style("top", (d3.event.pageY) + "px"); 
+            .style("top", (d3.event.pageY) + "px");
 }
 
 function linkMouseout(l, context) {
@@ -968,4 +1003,13 @@ function zoomed(context) {
     context.zoomArea.translate = d3.event.translate;
     context.zoomArea.scale = d3.event.scale;
     context.zoomArea.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+}
+
+function arrayToCsv(array) {
+	  var csv="";
+	  for(var i=0; i < array.length; i++) {
+	    csv += array[i] + ",";
+	  }
+	  csv = csv.slice(0,-1);
+	  return csv;
 }
