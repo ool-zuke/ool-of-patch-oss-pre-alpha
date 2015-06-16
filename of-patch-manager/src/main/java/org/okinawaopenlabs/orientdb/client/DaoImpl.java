@@ -1049,7 +1049,7 @@ public class DaoImpl implements Dao {
 				portNumber = (Integer)current.get("portNumber");
 			}
 			if (StringUtils.isBlank(band)) {
-				portName = (String)current.get("band");
+				band = (String)current.get("band");
 			}
 
 			Object[] params = {portName, portNumber, band, portRid};
