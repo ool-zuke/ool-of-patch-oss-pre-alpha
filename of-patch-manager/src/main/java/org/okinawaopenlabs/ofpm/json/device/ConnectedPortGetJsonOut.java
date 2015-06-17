@@ -2,9 +2,8 @@ package org.okinawaopenlabs.ofpm.json.device;
 
 import java.lang.reflect.Type;
 
+import org.okinawaopenlabs.ofpm.json.common.GenericsRestResultResponse;
 import org.okinawaopenlabs.ofpm.json.common.GraphDevicePort;
-
-import ool.com.commons.json.GenericsRestResultResponse;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
