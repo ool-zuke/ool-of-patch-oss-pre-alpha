@@ -768,8 +768,6 @@ function mouse(context) {
     var offsetY = context.zoomArea.translate[1] + scaleRY;
 
     return [d3.event.x - offsetX, d3.event.y - offsetY];
-//    return [d3.event.pageX - RX_SIZE, d3.event.pageY - RY_SIZE];
-//    return [d3.event.sourceEvent.x - RX_SIZE, d3.event.sourceEvent.y - RY_SIZE];
 }
 
 function mousedown(context) {
@@ -782,8 +780,6 @@ function mousemove(context) {
     if (context.m0) {
         var m1 = mouse(context),
             dm = Math.atan2(cross(context.m0, m1), dot(context.m0, m1)) * 180 / Math.PI;
-        //div.style("-webkit-transform", "translate3d(0," + (ry - rx) + "px,0)rotate3d(0,0,0," + dm + "deg)translate3d(0," + (rx - ry) + "px,0)");
-        //context.ofpAreaDiv.style("-webkit-transform", "translateY(" + (RY_SIZE - RX_SIZE) + "px)rotateZ(" + dm + "deg)translateY(" + (RX_SIZE - RY_SIZE) + "px)");
         context.rotateArea.style("-webkit-transform", "translateY(" + (RY_SIZE - RX_SIZE) + "px)rotateZ(" + (context.rotate + dm) + "deg)translateY(" + (RX_SIZE - RY_SIZE) + "px)");
     }
 }
@@ -800,9 +796,6 @@ function mouseup(context) {
             context.rotate += 360;
         }
         context.m0 = null;
-
-        //context.ofpAreaDiv.style("-webkit-transform", "rotate3d(0,0,0,0deg)");
-
         context.rotateArea//.style("-webkit-transform", "translateY(" + (RY_SIZE - RX_SIZE) + "px)rotateZ(" + (context.rotate + dm) + "deg)translateY(" + (RX_SIZE - RY_SIZE) + "px)")//.attr("transform", "translate(" + RX_SIZE + "," + RY_SIZE + ")rotate(" + context.rotate + ")")
             .selectAll("g.node text")
                 .attr("dx", function(d) { return (d.x + context.rotate) % 360 < 180 ? 25 : -25; })
@@ -871,7 +864,6 @@ function mouseout(d, context) {
 }
 
 function portMouseover(p, context) {
-//    d3.select(".portArc.node-" + p.parentNode.deviceName + ".port-" + p.portNumber).classed("highlight", true);
     d3.select(".portArc.node-" + p.parentNode.deviceName + ".port-" + p.internalPortName).classed("highlight", true);
 
     context.popupDiv.transition()
@@ -902,7 +894,6 @@ function portMouseover(p, context) {
 }
 
 function portMouseout(p, context) {
-//    d3.select(".portArc.node-" + p.parentNode.deviceName + ".port-" + p.portNumber).classed("highlight", false);
     d3.select(".portArc.node-" + p.parentNode.deviceName + ".port-" + p.internalPortName).classed("highlight", false);
 
     context.popupDiv.transition()

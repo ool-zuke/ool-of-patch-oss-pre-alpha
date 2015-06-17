@@ -67,7 +67,6 @@ if( typeof window.console.count !== "function" ){
 var OOLLOG = function OOLLOG() {}
 
 // メンバ
-//OOLLOG.log_tag = "OOL";
 OOLLOG.prototype.log_tag = "OOL";
 
 // メソッド

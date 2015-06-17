@@ -115,7 +115,6 @@
     var NODE_Y_SIZE = NODE_ARC_OUTER_RADIUS * 0.9 ;
 
     // 機器名
-//    var NODE_NAME_FONT_SIZE = (RY_SIZE / 250) * 10;
     var NODE_NAME_FONT_SIZE = (RY_SIZE / 250) * 10;
     var NODE_NAME_Y_SIZE = RY_SIZE * 0.05;
 
@@ -124,9 +123,6 @@
 
     // Line tension
     var DEFAULT_LINE_TENSION = .85;
-
-    // Patch link draw position
-    //var LINE_DRAW_Y_SIZE = RY_SIZE * 0.025;
 
     /************************************************************************************/
     // HTTP CODE 定義

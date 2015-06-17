@@ -9,5 +9,4 @@ var OFPLOG = function(){};
 // OOLLOGÇåpè≥
 OFPLOG.prototype = new OOLLOG();
 
-//OFPLOG.prototype.log_tag = "OF-PATCH";
 OOLLOG.prototype.log_tag = "OF-PATCH";

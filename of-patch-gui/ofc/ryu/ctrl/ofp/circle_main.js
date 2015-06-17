@@ -148,10 +148,7 @@ function ofPatchGuiMainExec(classes){
             .on("zoom", function(){zoomed(context);});
 
     // Create SVG Area.
-//    context.svg = context.ofpAreaDiv.append("svg:svg")
     context.svg = d3.select(".svg_area")
-//            .attr("width", SVG_WIDTH)
-//            .attr("height", SVG_HIGHT)
         .append("svg:g")
             .call(context.zoom)
         .on("mousemove", function(d) { mousemove(context);})
@@ -187,13 +184,6 @@ function ofPatchGuiMainExec(classes){
             .attr("class", "rotateArea");
 
     // Create Rotating operation Ring.
-/*
-    context.rotateAreadrag = d3.behavior.drag()
-        .origin(function(d) { return d; })
-        .on("dragstart", function(){ dragstarted(context); })
-        .on("drag", function(){ dragged(context) ;})
-        .on("dragend", function(){ dragended(context); });
-*/
     var rotateAreaData = [];
     rotateAreaData.push({width:SVG_MIN_SIZE,height:SVG_MIN_SIZE});
     context.rotateOpeArea = context.rotateArea.selectAll("g.nodeArc")
@@ -201,7 +191,6 @@ function ofPatchGuiMainExec(classes){
         .enter().append("svg:path")
             .attr("class", "arc rotating-operation-ring")
             .attr("d", d3.svg.arc().innerRadius(RING_INNER_RADIUS).outerRadius(RING_OUTER_RADIUS).startAngle(0).endAngle(2 * Math.PI))
-//            .call(context.rotateAreadrag);
         .on("mousedown", function(d) { mousedown(context); });
 
     if (context.isP2PFlag) {

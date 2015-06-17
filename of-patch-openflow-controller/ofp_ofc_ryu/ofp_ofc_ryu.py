@@ -8,7 +8,6 @@ from ryu.lib import dpid as dpid_lib
 from ryu.lib import port_no as port_no_lib
 from ryu.lib.packet import packet, ethernet
 from ryu.ofproto import ofproto_v1_0, ofproto_v1_3
-#from ryu.topology.switches import get_switch, get_link
 from operator import attrgetter
 
 from api.service import SwitchController
