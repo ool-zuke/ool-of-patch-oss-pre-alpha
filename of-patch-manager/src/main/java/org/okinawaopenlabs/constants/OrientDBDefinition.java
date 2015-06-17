@@ -1,10 +1,4 @@
-/**
- * @author OOL 1131080355959
- * @date 2014/02/05
- * @TODO TODO
- */
 package org.okinawaopenlabs.constants;
-
 
 public class OrientDBDefinition {
 	/* Routing */
@@ -126,5 +120,4 @@ public class OrientDBDefinition {
 	/* OFP Flag */
 	public static final String OFP_FLAG_TRUE  = "true";
 	public static final String OFP_FLAG_FALSE = "false";
-
 }

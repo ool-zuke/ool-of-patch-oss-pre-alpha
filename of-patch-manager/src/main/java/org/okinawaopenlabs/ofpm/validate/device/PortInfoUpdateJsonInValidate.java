@@ -4,6 +4,7 @@ import static org.okinawaopenlabs.constants.ErrorMessage.*;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
+
 import org.okinawaopenlabs.ofpm.exception.ValidateException;
 import org.okinawaopenlabs.ofpm.json.device.PortInfoUpdateJsonIn;
 import org.okinawaopenlabs.ofpm.validate.common.BaseValidate;

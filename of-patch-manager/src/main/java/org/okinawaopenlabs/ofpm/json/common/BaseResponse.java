@@ -2,12 +2,11 @@ package org.okinawaopenlabs.ofpm.json.common;
 
 import java.lang.reflect.Type;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
 
 public class BaseResponse {
 	private int status;

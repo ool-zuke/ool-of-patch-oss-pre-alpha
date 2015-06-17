@@ -1,12 +1,12 @@
 package org.okinawaopenlabs.ofpm.validate.topology.physical;
 
-import static org.okinawaopenlabs.constants.ErrorMessage.*;
-import static org.okinawaopenlabs.constants.OfpmDefinition.*;
-
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
+
+import static org.okinawaopenlabs.constants.ErrorMessage.*;
+import static org.okinawaopenlabs.constants.OfpmDefinition.*;
 import org.okinawaopenlabs.ofpm.exception.ValidateException;
 import org.okinawaopenlabs.ofpm.json.device.PortData;
 import org.okinawaopenlabs.ofpm.json.topology.physical.ConnectPhysicalLinksJsonIn;
@@ -36,14 +36,6 @@ public class ConnectPhysicalLinksJsonInValidate extends BaseValidate {
 			if (BaseValidate.checkNull(physicalLink)) {
 				throw new ValidateException(String.format(IS_NULL, msgLinks));
 			}
-
-//			String band = physicalLink.getBand();
-//			if (StringUtils.isBlank(physicalLink.getBand())) {
-//				throw new ValidateException(String.format(IS_BLANK, msgLinks + ".band:" + band));
-//			}
-//			if (!band.matches(REGEX_NUMBER)) {
-//				throw new ValidateException(String.format(IS_NOT_NUMBER, msgLinks + ".band:" + band));
-//			}
 
 			List<PortData> ports = physicalLink.getLink();
 			if (BaseValidate.checkNull(ports)) {

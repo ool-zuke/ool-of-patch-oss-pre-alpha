@@ -1,8 +1,5 @@
 package org.okinawaopenlabs.orientdb.client;
 
-import static org.apache.commons.lang.StringUtils.*;
-import static org.okinawaopenlabs.constants.OfpmDefinition.*;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,6 +13,9 @@ import org.apache.commons.dbcp.PoolableConnectionFactory;
 import org.apache.commons.dbcp.PoolingDataSource;
 import org.apache.commons.dbutils.DbUtils;
 import org.apache.commons.pool.impl.GenericObjectPool;
+
+import static org.apache.commons.lang.StringUtils.*;
+import static org.okinawaopenlabs.constants.OfpmDefinition.*;
 import org.okinawaopenlabs.ofpm.utils.Config;
 import org.okinawaopenlabs.ofpm.utils.ConfigImpl;
 

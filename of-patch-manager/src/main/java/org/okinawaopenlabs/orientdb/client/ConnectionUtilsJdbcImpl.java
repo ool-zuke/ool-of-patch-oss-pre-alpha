@@ -1,8 +1,3 @@
-/**
- * @author OOL 1131080355959
- * @date 2014/02/13
- * @TODO
- */
 package org.okinawaopenlabs.orientdb.client;
 
 import java.sql.Connection;
@@ -11,13 +6,10 @@ import java.sql.SQLException;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.ResultSetHandler;
 import org.apache.log4j.Logger;
+
 import org.okinawaopenlabs.ofpm.utils.Config;
 import org.okinawaopenlabs.ofpm.utils.ConfigImpl;
 
-/**
- * @author 1131080355959
- *
- */
 public class ConnectionUtilsJdbcImpl implements ConnectionUtilsJdbc {
 
 	private static final Logger logger = Logger.getLogger(ConnectionUtilsJdbcImpl.class);

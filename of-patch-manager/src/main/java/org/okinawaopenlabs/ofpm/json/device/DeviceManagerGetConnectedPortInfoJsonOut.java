@@ -1,24 +1,15 @@
-/**
- * @author OOL 1131080355959
- * @date 2014/03/04
- * @TODO
- */
 package org.okinawaopenlabs.ofpm.json.device;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.okinawaopenlabs.ofpm.json.common.BaseResponse;
-
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.reflect.TypeToken;
 
-/**
- * @author 1131080355959
- *
- */
+import org.okinawaopenlabs.ofpm.json.common.BaseResponse;
+
 public class DeviceManagerGetConnectedPortInfoJsonOut extends BaseResponse {
 
 	@SerializedName("result")

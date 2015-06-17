@@ -12,9 +12,6 @@ import com.orientechnologies.orient.core.record.impl.ODocument;
 import com.orientechnologies.orient.core.sql.OCommandSQL;
 import com.orientechnologies.orient.jdbc.OrientJdbcConnection;
 
-/**
- *
- */
 public class OrientJdbcPreparedStatement extends com.orientechnologies.orient.jdbc.OrientJdbcPreparedStatement {
 
 	public OrientJdbcPreparedStatement(OrientJdbcConnection iConnection, String sql) {
@@ -48,12 +45,9 @@ public class OrientJdbcPreparedStatement extends com.orientechnologies.orient.jd
 			}
 		} catch (OQueryParsingException e) {
 			throw new SQLSyntaxErrorException("Error on parsing the command", e);
-//		} catch (ORecordDuplicatedException e) {
-//			throw new SQLException("制約に違反しています。", query.toString(), DB_RESPONSE_STATUS_EXIST);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 		return 0;
 	}
-
 }

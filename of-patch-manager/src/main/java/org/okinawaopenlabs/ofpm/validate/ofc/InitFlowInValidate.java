@@ -1,10 +1,10 @@
 package org.okinawaopenlabs.ofpm.validate.ofc;
 
-import static org.okinawaopenlabs.constants.ErrorMessage.*;
-import static org.okinawaopenlabs.constants.OfpmDefinition.*;
-
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
+
+import static org.okinawaopenlabs.constants.ErrorMessage.*;
+import static org.okinawaopenlabs.constants.OfpmDefinition.*;
 import org.okinawaopenlabs.ofpm.exception.ValidateException;
 import org.okinawaopenlabs.ofpm.json.ofc.InitFlowIn;
 import org.okinawaopenlabs.ofpm.validate.common.BaseValidate;

@@ -13,7 +13,6 @@ import java.util.Properties;
 import com.orientechnologies.common.log.OLogManager;
 import com.orientechnologies.orient.core.config.OGlobalConfiguration;
 
-//public class OrientJdbcDriver implements java.sql.Driver {
 public class OrientJdbcDriver extends com.orientechnologies.orient.jdbc.OrientJdbcDriver {
 	private static Boolean initialized = false;
 	public OrientJdbcDriver() {
@@ -37,34 +36,4 @@ public class OrientJdbcDriver extends com.orientechnologies.orient.jdbc.OrientJd
 	public Connection connect(String url, Properties info) throws SQLException {
 		return new OrientJdbcConnection(url, info);
 	}
-
-//	@Override
-//	public boolean acceptsURL(String url) throws SQLException {
-//		return url.startsWith("jdbc:orient:");
-//	}
-//
-//	@Override
-//	public DriverPropertyInfo[] getPropertyInfo(String url, Properties info) throws SQLException {
-//		return new DriverPropertyInfo[]{};
-//	}
-//
-//	@Override
-//	public int getMajorVersion() {
-//		return 1;
-//	}
-//
-//	@Override
-//	public int getMinorVersion() {
-//		return 0;
-//	}
-//
-//	@Override
-//	public boolean jdbcCompliant() {
-//		return false;
-//	}
-//
-//	@Override
-//	public Logger getParentLogger() throws SQLFeatureNotSupportedException {
-//		return null;
-//	}
 }

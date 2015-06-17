@@ -1,12 +1,6 @@
-/**
- * @author OOL 1131080355959
- * @date 2014/02/05
- * @TODO TODO
- */
 package org.okinawaopenlabs.ofpm.utils;
 
 import java.util.List;
-
 import org.apache.commons.configuration.Configuration;
 
 /**

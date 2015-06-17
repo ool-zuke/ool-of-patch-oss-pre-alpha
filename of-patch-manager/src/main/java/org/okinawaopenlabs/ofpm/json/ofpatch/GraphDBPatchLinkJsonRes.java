@@ -4,11 +4,11 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.okinawaopenlabs.ofpm.json.common.BaseResponse;
-import org.okinawaopenlabs.ofpm.json.ofc.PatchLink;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+
+import org.okinawaopenlabs.ofpm.json.common.BaseResponse;
+import org.okinawaopenlabs.ofpm.json.ofc.PatchLink;
 
 public class GraphDBPatchLinkJsonRes extends BaseResponse {
 	private List<PatchLink> result = new ArrayList<PatchLink>();

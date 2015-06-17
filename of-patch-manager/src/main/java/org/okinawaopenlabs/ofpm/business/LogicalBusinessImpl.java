@@ -22,8 +22,10 @@ import java.util.Set;
 import javax.ws.rs.core.MultivaluedHashMap;
 import javax.ws.rs.core.MultivaluedMap;
 
+import com.google.gson.JsonSyntaxException;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
+
 import org.okinawaopenlabs.ofpm.client.OFCClient;
 import org.okinawaopenlabs.ofpm.client.OFCClientImpl;
 import org.okinawaopenlabs.ofpm.exception.NoRouteException;
@@ -50,8 +52,6 @@ import org.okinawaopenlabs.orientdb.client.ConnectionUtilsJdbc;
 import org.okinawaopenlabs.orientdb.client.ConnectionUtilsJdbcImpl;
 import org.okinawaopenlabs.orientdb.client.Dao;
 import org.okinawaopenlabs.orientdb.client.DaoImpl;
-
-import com.google.gson.JsonSyntaxException;
 
 public class LogicalBusinessImpl implements LogicalBusiness {
 	private static final Logger logger = Logger.getLogger(LogicalBusinessImpl.class);
@@ -167,7 +167,6 @@ public class LogicalBusinessImpl implements LogicalBusiness {
 		return node;
 	}
 
-
 	/**
 	 * Normalize links for update/get LogicalTopology.
 	 * Remove list that does not contains nodes.
@@ -183,10 +182,8 @@ public class LogicalBusinessImpl implements LogicalBusiness {
 		List<LogicalLink> removalLinks = new ArrayList<LogicalLink>();
 		for (LogicalLink link : links) {
 			List<PortData> ports = link.getLink();
-//			if (!OFPMUtils.nodesContainsPort(nodes, ports.get(0).getDeviceName(), ports.get(0).getPortName())) {
 			if (!OFPMUtils.nodesContainsPort(nodes, ports.get(0).getDeviceName(), null)) {
 				removalLinks.add(link);
-//			} else if (!OFPMUtils.nodesContainsPort(nodes, ports.get(1).getDeviceName(), ports.get(1).getPortName())) {
 			} else if (!OFPMUtils.nodesContainsPort(nodes, ports.get(1).getDeviceName(), null)) {
 				removalLinks.add(link);
 			}
@@ -259,10 +256,6 @@ public class LogicalBusinessImpl implements LogicalBusiness {
 		return linkSet;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.ofpm.business.LogicalBusiness#getLogicalTopology(java.lang.String, java.lang.String)
-	 */
 	public String getLogicalTopology(String deviceNamesCSV) {
 		String fname = "getLogicalTopology";
 		if (logger.isDebugEnabled()) {
@@ -315,7 +308,6 @@ public class LogicalBusinessImpl implements LogicalBusiness {
 			}
 			linkList.addAll(linkSet);
 			this.normalizeLogicalNode(conn,     nodeList);
-//			this.normalizeLogicalLink(nodeList, linkList);
 
 			LogicalTopology topology = new LogicalTopology();
 			topology.setNodes(nodeList);
@@ -329,7 +321,6 @@ public class LogicalBusinessImpl implements LogicalBusiness {
 			res.setStatus(STATUS_INTERNAL_ERROR);
 			res.setMessage(e.getMessage());
 		} finally {
-//			utilsJdbc.rollback(conn);
 			utilsJdbc.close(conn);
 		}
 
@@ -340,10 +331,6 @@ public class LogicalBusinessImpl implements LogicalBusiness {
 		return ret;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.ofpm.business.LogicalBusiness#updateLogicalTopology(java.lang.String)
-	 */
 	public String updateLogicalTopology(String requestedTopologyJson) {
 		String fname = "updateLogicalTopology";
 		if (logger.isDebugEnabled()) {
@@ -383,7 +370,6 @@ public class LogicalBusinessImpl implements LogicalBusiness {
 
 		MultivaluedMap<String, Map<String, Object>> reducedFlows   = new MultivaluedHashMap<String, Map<String, Object>>();
 		MultivaluedMap<String, Map<String, Object>> augmentedFlows = new MultivaluedHashMap<String, Map<String, Object>>();
-//		List<LogicalLink> ncsNotifyLinkList = new ArrayList<LogicalLink>();
 		ConnectionUtilsJdbc utilsJdbc = null;
 		Connection conn = null;
 		try {
@@ -561,9 +547,6 @@ public class LogicalBusinessImpl implements LogicalBusiness {
 		return ret;
 	}
 
-	/* (non-Javadoc)
-	 * @see org.okinawaopenlabs.ofpm.business.LogicalBusiness#setFlow(java.lang.String)
-	 */
 	@Override
 	public String setFlow(String requestedData) {
 		final String fname = "setFlow";
@@ -598,9 +581,6 @@ public class LogicalBusinessImpl implements LogicalBusiness {
 
 			// generate InternalMac and setFlow to OFC
 			Iterator<Map<String, Map<String, Object>>> it = ret.iterator();
-			//String srcMac = req.getSrcMac();
-			//String dstMac = req.getDstMac();
-			//String internalMac = dao.getInternalMacFromDeviceNameInPortSrcMacDstMac(conn, deviceName, req.getInPort(), req.getSrcMac(), req.getDstMac());
 			String internalMac = DaoImpl.getInternalMacFromDeviceNameInPortSrcMacDstMac(utilsJdbc, conn, deviceName, req.getInPort(), req.getSrcMac(), req.getDstMac());
 			Long tmp = ~(OFPMUtils.macAddressToLong(internalMac));
 			String internalDstMac = OFPMUtils.longToMacAddress(tmp);
@@ -685,10 +665,6 @@ public class LogicalBusinessImpl implements LogicalBusiness {
 		return ret;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.ofpm.business.LogicalBusiness#initFlow(java.lang.String)
-	 */
 	@Override
 	public String initFlow(String requestedData) {
 		final String fname = "initFlow";
@@ -801,7 +777,6 @@ public class LogicalBusinessImpl implements LogicalBusiness {
 			res.setStatus(STATUS_INTERNAL_ERROR);
 			res.setMessage(e.getMessage());
 		} finally {
-//			utils.rollback(conn);
 			utils.close(conn);
 		}
 

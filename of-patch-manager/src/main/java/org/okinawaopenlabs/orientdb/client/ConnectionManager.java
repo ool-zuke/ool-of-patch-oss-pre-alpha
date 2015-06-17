@@ -2,13 +2,13 @@ package org.okinawaopenlabs.orientdb.client;
 
 import java.sql.SQLException;
 
-import static org.okinawaopenlabs.constants.OfpmDefinition.*;
-
+import com.orientechnologies.orient.core.db.document.ODatabaseDocumentTx;
 import org.apache.log4j.Logger;
+
+import static org.okinawaopenlabs.constants.OfpmDefinition.*;
 import org.okinawaopenlabs.ofpm.utils.Config;
 import org.okinawaopenlabs.ofpm.utils.ConfigImpl;
 
-import com.orientechnologies.orient.core.db.document.ODatabaseDocumentTx;
 
 public class ConnectionManager {
 

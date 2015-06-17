@@ -3,15 +3,15 @@ package org.okinawaopenlabs.ofpm.service;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import org.apache.log4j.Logger;
-import org.okinawaopenlabs.ofpm.business.PhysicalBusiness;
-import org.okinawaopenlabs.ofpm.business.PhysicalBusinessImpl;
-import org.springframework.stereotype.Component;
-
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Inject;
 import com.google.inject.Injector;
+import org.apache.log4j.Logger;
+import org.springframework.stereotype.Component;
+
+import org.okinawaopenlabs.ofpm.business.PhysicalBusiness;
+import org.okinawaopenlabs.ofpm.business.PhysicalBusinessImpl;
 
 @Component
 public class PhysicalServiceImpl implements PhysicalService {

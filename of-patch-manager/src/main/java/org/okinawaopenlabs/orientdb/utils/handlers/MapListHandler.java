@@ -7,11 +7,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- *
- * @author user
- *
- */
 public class MapListHandler extends org.apache.commons.dbutils.handlers.MapListHandler {
 	private final String[] labels;
 

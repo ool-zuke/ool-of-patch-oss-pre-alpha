@@ -2,10 +2,10 @@ package org.okinawaopenlabs.ofpm.json.device;
 
 import java.lang.reflect.Type;
 
-import org.apache.commons.lang3.StringUtils;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+
+import org.apache.commons.lang3.StringUtils;
 
 public class Node implements Cloneable {
 	private String deviceName;
@@ -48,7 +48,6 @@ public class Node implements Cloneable {
 		if(this.getClass() != obj.getClass()) return false;
 		Node other = (Node)obj;
 		if (!StringUtils.equals(other.deviceName, this.deviceName)) return false;
-//		if (!StringUtils.equals(other.deviceType, this.deviceType)) return false;
 		return true;
 	}
 	@Override

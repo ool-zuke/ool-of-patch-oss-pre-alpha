@@ -7,7 +7,9 @@ import static org.okinawaopenlabs.constants.OrientDBDefinition.*;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+import com.google.gson.JsonSyntaxException;
 import org.apache.log4j.Logger;
+
 import org.okinawaopenlabs.ofpm.exception.ValidateException;
 import org.okinawaopenlabs.ofpm.json.common.BaseResponse;
 import org.okinawaopenlabs.ofpm.json.device.PortData;
@@ -24,18 +26,11 @@ import org.okinawaopenlabs.orientdb.client.ConnectionUtilsJdbcImpl;
 import org.okinawaopenlabs.orientdb.client.Dao;
 import org.okinawaopenlabs.orientdb.client.DaoImpl;
 
-import com.google.gson.JsonSyntaxException;
-
 public class PhysicalBusinessImpl implements PhysicalBusiness {
 	private static final Logger logger = Logger.getLogger(PhysicalBusinessImpl.class);
 
 	Config conf = new ConfigImpl();
 
-
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.ofpm.business.PhysicalBusiness#connectPhysicalLink(java.lang.String)
-	 */
 	@Override
 	public String connectPhysicalLink(String physicalLinkJson) {
 		final String fname = "connectPhysicalLink";
@@ -127,10 +122,6 @@ public class PhysicalBusinessImpl implements PhysicalBusiness {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.ofpm.business.PhysicalBusiness#disconnectPhysicalLink(java.lang.String)
-	 */
 	@Override
 	public String disconnectPhysicalLink(String physicalLinkJson) {
 		final String fname = "disconnectPhysicalLink";

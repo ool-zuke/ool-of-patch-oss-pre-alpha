@@ -1,9 +1,5 @@
 package org.okinawaopenlabs.ofpm.utils;
 
-import static org.okinawaopenlabs.constants.ErrorMessage.*;
-import static org.okinawaopenlabs.constants.OfpmDefinition.*;
-import static org.okinawaopenlabs.constants.OrientDBDefinition.*;
-
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.Collection;
@@ -13,33 +9,15 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
+
+import static org.okinawaopenlabs.constants.ErrorMessage.*;
+import static org.okinawaopenlabs.constants.OfpmDefinition.*;
+import static org.okinawaopenlabs.constants.OrientDBDefinition.*;
 import org.okinawaopenlabs.ofpm.json.device.PortData;
 import org.okinawaopenlabs.ofpm.json.topology.logical.LogicalTopology.OfpConDeviceInfo;
 import org.okinawaopenlabs.ofpm.json.topology.logical.LogicalTopology.OfpConPortInfo;
 
 public class OFPMUtils {
-
-//	/**
-//	 * Check port contains in nodes.
-//	 * @param nodes
-//	 * @param port
-//	 * @return
-//	 */
-//	public static boolean nodesContainsPort(Collection<OfpConDeviceInfo> nodes, PortData port) {
-//		for (OfpConDeviceInfo device : nodes) {
-//			if (device.getDeviceName().equals(port.getDeviceName())) {
-//				if (StringUtils.isBlank(port.getPortName())) {
-//					return true;
-//				}
-//				for (OfpConPortInfo ofpConPort : device.getPorts()) {
-//					if (ofpConPort.getPortName().equals(port.getPortName())) {
-//						return true;
-//					}
-//				}
-//			}
-//		}
-//		return false;
-//	}
 	/**
 	 * Check port contains into nodes.
 	 * @param nodes

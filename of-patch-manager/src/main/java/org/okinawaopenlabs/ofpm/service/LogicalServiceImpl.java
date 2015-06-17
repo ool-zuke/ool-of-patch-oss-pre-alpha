@@ -3,15 +3,15 @@ package org.okinawaopenlabs.ofpm.service;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import org.apache.log4j.Logger;
-import org.okinawaopenlabs.ofpm.business.LogicalBusiness;
-import org.okinawaopenlabs.ofpm.business.LogicalBusinessImpl;
-import org.springframework.stereotype.Component;
-
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Inject;
 import com.google.inject.Injector;
+import org.apache.log4j.Logger;
+import org.springframework.stereotype.Component;
+
+import org.okinawaopenlabs.ofpm.business.LogicalBusiness;
+import org.okinawaopenlabs.ofpm.business.LogicalBusinessImpl;
 
 @Component
 public class LogicalServiceImpl implements LogicalService {
@@ -84,9 +84,6 @@ public class LogicalServiceImpl implements LogicalService {
 		return Response.ok(resLogiBiz).type(MediaType.APPLICATION_JSON_TYPE).build();
 	}
 
-	/* (non-Javadoc)
-	 * @see org.okinawaopenlabs.ofpm.service.LogicalService#setFlow(java.lang.String)
-	 */
 	@Override
 	public Response setFlow(String requestedData) {
 		final String fname = "setFlow";
@@ -109,11 +106,6 @@ public class LogicalServiceImpl implements LogicalService {
 		return Response.ok(resLogiBiz).type(MediaType.APPLICATION_JSON_TYPE).build();
 	}
 
-
-	/*
-	 * @Override(non-Javadoc)
-	 * @see org.okinawaopenlabs.ofpm.service.LogicalService#initFlow(java.lang.String)
-	 */
 	public Response initFlow(String requestedData) {
 		final String fname = "initFlow";
 		if (logger.isDebugEnabled()) {

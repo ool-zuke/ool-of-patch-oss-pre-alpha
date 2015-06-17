@@ -1,8 +1,4 @@
-/**
- * @author OOL 1131080355959
- * @date 2014/07/25
- * @TODO
- */
+
 package org.okinawaopenlabs.ofpm.json.ofc;
 
 import java.lang.reflect.Type;
@@ -10,10 +6,6 @@ import java.lang.reflect.Type;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-/**
- * @author 1131080355959
- *
- */
 public class SetFlowToOFC {
 
 	private String dpid;

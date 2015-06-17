@@ -2,10 +2,10 @@ package org.okinawaopenlabs.ofpm.json.common;
 
 import java.lang.reflect.Type;
 
-import org.okinawaopenlabs.ofpm.json.device.DeviceType;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+
+import org.okinawaopenlabs.ofpm.json.device.DeviceType;
 
 public class GraphDevicePort {
 	private String deviceName;

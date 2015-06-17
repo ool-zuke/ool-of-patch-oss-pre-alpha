@@ -1,14 +1,7 @@
-/**
- * @author OOL 1131080355959
- * @date 2014/02/05
- * @TODO TODO
- */
 package org.okinawaopenlabs.ofpm.utils;
 
 import java.io.StringWriter;
 import java.util.List;
-
-import static org.okinawaopenlabs.constants.OfpmDefinition.*;
 
 import org.apache.commons.configuration.Configuration;
 import org.apache.commons.configuration.ConfigurationException;
@@ -16,12 +9,8 @@ import org.apache.commons.configuration.ConversionException;
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.log4j.Logger;
 
-/**
- * Class to load config file.
- *
- * @author kurahashi
- * @version 0.1
- */
+import static org.okinawaopenlabs.constants.OfpmDefinition.*;
+
 public class ConfigImpl implements Config {
 
     private static final Logger logger = Logger.getLogger(ConfigImpl.class);

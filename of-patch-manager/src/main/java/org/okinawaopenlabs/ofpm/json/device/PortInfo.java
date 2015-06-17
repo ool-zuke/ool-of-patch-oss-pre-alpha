@@ -1,11 +1,9 @@
 package org.okinawaopenlabs.ofpm.json.device;
 
-import org.apache.commons.lang3.ObjectUtils;
-import org.apache.commons.lang3.StringUtils;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
+import org.apache.commons.lang3.ObjectUtils;
+import org.apache.commons.lang3.StringUtils;
 
 public class PortInfo implements Cloneable {
 	private String portName;

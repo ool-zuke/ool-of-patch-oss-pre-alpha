@@ -1,8 +1,7 @@
 package org.okinawaopenlabs.ofpm.json.device;
 
-import org.apache.commons.lang3.StringUtils;
-
 import com.google.gson.Gson;
+import org.apache.commons.lang3.StringUtils;
 
 public class PortData extends PortInfo implements Cloneable {
 	private String deviceName;

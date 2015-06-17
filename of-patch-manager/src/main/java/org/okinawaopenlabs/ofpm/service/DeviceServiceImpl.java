@@ -3,15 +3,15 @@ package org.okinawaopenlabs.ofpm.service;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import org.apache.log4j.Logger;
-import org.okinawaopenlabs.ofpm.business.DeviceBusiness;
-import org.okinawaopenlabs.ofpm.business.DeviceBusinessImpl;
-import org.springframework.stereotype.Component;
-
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Inject;
 import com.google.inject.Injector;
+import org.apache.log4j.Logger;
+import org.springframework.stereotype.Component;
+
+import org.okinawaopenlabs.ofpm.business.DeviceBusiness;
+import org.okinawaopenlabs.ofpm.business.DeviceBusinessImpl;
 
 @Component
 public class DeviceServiceImpl implements DeviceService {
@@ -87,10 +87,6 @@ public class DeviceServiceImpl implements DeviceService {
 		return Response.ok(resDeviceBiz).type(MediaType.APPLICATION_JSON_TYPE).build();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.ofpm.service.DeviceService#readDevice(java.lang.String)
-	 */
 	@Override
 	public Response readDevice(String deviceName) {
 		final String fname = "readDevice";
@@ -111,10 +107,6 @@ public class DeviceServiceImpl implements DeviceService {
 		return Response.ok(resDeviceBiz).type(MediaType.APPLICATION_JSON_TYPE).build();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.ofpm.service.DeviceService#readDeviceList()
-	 */
 	@Override
 	public Response readDeviceList() {
 		final String fname = "readDeviceList";
@@ -135,9 +127,6 @@ public class DeviceServiceImpl implements DeviceService {
 		return Response.ok(resDeviceBiz).type(MediaType.APPLICATION_JSON_TYPE).build();
 	}
 
-	/* (non-Javadoc)
-	 * @see org.okinawaopenlabs.ofpm.service.DeviceService#createPort(java.lang.String)
-	 */
 	@Override
 	public Response createPort(String deviceName, String newPortInfoJson) {
 		final String fname = "createPort";
@@ -160,9 +149,6 @@ public class DeviceServiceImpl implements DeviceService {
 		return Response.ok(resDeviceBiz).type(MediaType.APPLICATION_JSON_TYPE).build();
 	}
 
-	/* (non-Javadoc)
-	 * @see org.okinawaopenlabs.ofpm.service.DeviceService#deletePort(java.lang.String, java.lang.String)
-	 */
 	@Override
 	public Response deletePort(String deviceName, String portName) {
 		final String fname = "deletePort";
@@ -185,9 +171,6 @@ public class DeviceServiceImpl implements DeviceService {
 		return Response.ok(resDeviceBiz).type(MediaType.APPLICATION_JSON_TYPE).build();
 	}
 
-	/* (non-Javadoc)
-	 * @see org.okinawaopenlabs.ofpm.service.DeviceService#updatePort(java.lang.String)
-	 */
 	@Override
 	public Response updatePort(String deviceName, String portName, String updatePortInfoJson) {
 		final String fname = "updatePort";
@@ -210,9 +193,6 @@ public class DeviceServiceImpl implements DeviceService {
 		return Response.ok(resDeviceBiz).type(MediaType.APPLICATION_JSON_TYPE).build();
 	}
 
-	/* (non-Javadoc)
-	 * @see org.okinawaopenlabs.ofpm.service.DeviceService#getConnectedPortInfo(java.lang.String)
-	 */
 	@Override
 	public Response getConnectedPortInfo(String deviceName) {
 		final String fname = "getConnectedPortInfo";

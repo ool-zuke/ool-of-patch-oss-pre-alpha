@@ -1,10 +1,10 @@
 package org.okinawaopenlabs.ofpm.validate.device;
 
-import static org.okinawaopenlabs.constants.ErrorMessage.*;
-import static org.okinawaopenlabs.constants.OfpmDefinition.*;
-
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
+
+import static org.okinawaopenlabs.constants.ErrorMessage.*;
+import static org.okinawaopenlabs.constants.OfpmDefinition.*;
 import org.okinawaopenlabs.ofpm.exception.ValidateException;
 import org.okinawaopenlabs.ofpm.json.device.DeviceInfoUpdateJsonIn;
 import org.okinawaopenlabs.ofpm.validate.common.BaseValidate;
@@ -12,10 +12,6 @@ import org.okinawaopenlabs.ofpm.validate.common.BaseValidate;
 public class DeviceInfoUpdateJsonInValidate extends BaseValidate {
 	private static Logger logger = Logger.getLogger(DeviceInfoUpdateJsonInValidate.class);
 
-	/**
-	 * @param newDeviceInfo
-	 * @throws ValidateException
-	 */
 	public void checkValidation(String deviceName, DeviceInfoUpdateJsonIn newDeviceInfo) throws ValidateException {
 		String fname = "checkValidateion";
 		if (logger.isDebugEnabled()) {

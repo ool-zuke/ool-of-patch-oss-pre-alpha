@@ -2,11 +2,9 @@ package org.okinawaopenlabs.ofpm.json.device;
 
 import java.lang.reflect.Type;
 
-import org.apache.commons.lang3.StringUtils;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
+import org.apache.commons.lang3.StringUtils;
 
 public class DeviceInfo extends Node implements Cloneable {
 	private String datapathId;

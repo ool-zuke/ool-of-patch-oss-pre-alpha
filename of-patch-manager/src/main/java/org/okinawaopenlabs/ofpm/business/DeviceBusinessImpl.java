@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.google.gson.JsonSyntaxException;
 import org.apache.log4j.Logger;
+
 import org.okinawaopenlabs.ofpm.exception.ValidateException;
 import org.okinawaopenlabs.ofpm.json.common.BaseResponse;
 import org.okinawaopenlabs.ofpm.json.device.DeviceInfo;
@@ -37,18 +39,12 @@ import org.okinawaopenlabs.orientdb.client.ConnectionUtilsJdbcImpl;
 import org.okinawaopenlabs.orientdb.client.Dao;
 import org.okinawaopenlabs.orientdb.client.DaoImpl;
 
-import com.google.gson.JsonSyntaxException;
-
 
 public class DeviceBusinessImpl implements DeviceBusiness {
 	private static final Logger logger = Logger.getLogger(DeviceBusinessImpl.class);
 
 	Config conf = new ConfigImpl();
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.ofpm.business.DeviceBusiness#createDevice(java.lang.String)
-	 */
 	public String createDevice(String newDeviceInfoJson) {
 		String fname = "createDevice";
 		if (logger.isDebugEnabled()) {
@@ -123,10 +119,6 @@ public class DeviceBusinessImpl implements DeviceBusiness {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.ofpm.business.DeviceBusiness#deleteDevice(java.lang.String)
-	 */
 	public String deleteDevice(String deviceName) {
 		String fname = "deleteDevice";
 		if (logger.isDebugEnabled()) {
@@ -196,10 +188,6 @@ public class DeviceBusinessImpl implements DeviceBusiness {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.ofpm.business.DeviceBusiness#updateDevice(java.lang.String, java.lang.String)
-	 */
 	public String updateDevice(String deviceName, String updateDeviceInfoJson) {
 
 		String fname = "updateDevice";
@@ -382,10 +370,6 @@ public class DeviceBusinessImpl implements DeviceBusiness {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.ofpm.business.DeviceBusiness#createPort(java.lang.String, java.lang.String)
-	 */
 	public String createPort(String deviceName, String newPortInfoJson) {
 		String fname = "createPort";
 		if (logger.isDebugEnabled()) {
@@ -466,10 +450,6 @@ public class DeviceBusinessImpl implements DeviceBusiness {
 
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.ofpm.business.DeviceBusiness#deletePort(java.lang.String, java.lang.String)
-	 */
 	public String deletePort(String deviceName, String portName) {
 		String fname = "deletePort";
 		if (logger.isDebugEnabled()) {
@@ -538,10 +518,6 @@ public class DeviceBusinessImpl implements DeviceBusiness {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.ofpm.business.DeviceBusiness#updatePort(java.lang.String, java.lang.String, java.lang.String)
-	 */
 	public String updatePort(String deviceName, String portName, String updatePortInfoJson) {
 		String fname = "updatePort";
 		if (logger.isDebugEnabled()) {
@@ -622,10 +598,6 @@ public class DeviceBusinessImpl implements DeviceBusiness {
 		}
 	}
 
-
-	/* (non-Javadoc)
-	 * @see ool.com.orientdb.business.DeviceManagerBusiness#getConnectedPortInfo(java.lang.String)
-	 */
 	@Override
 	public String getConnectedPortInfo(String deviceName) {
 		final String fname = "getConnectedPortInfo";
@@ -712,12 +684,6 @@ public class DeviceBusinessImpl implements DeviceBusiness {
 		}
 	}
 
-	/**
-	 * Make LinkData for ResultData(this is used getConnectedPort) and add to ResultData object.
-	 * @param resultData
-	 * @param nodeInfoMap
-	 * @param portInfoMap
-	 */
 	private void addLinkDataToResultData(ResultData resultData, Map<String, Object> nodeInfoMap, Map<String, Object> portInfoMap) {
 		String  nodeName = (String)  nodeInfoMap.get("name");
 		String  nodeType = (String)  nodeInfoMap.get("type");

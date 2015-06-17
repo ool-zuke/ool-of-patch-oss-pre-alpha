@@ -1,8 +1,3 @@
-/**
- * @author OOL 1131080355959
- * @date 2014/02/05
- * @TODO TODO
- */
 package org.okinawaopenlabs.constants;
 
 public class OfpmDefinition {
@@ -32,13 +27,8 @@ public class OfpmDefinition {
 	public static final String CONFIG_KEY_DB_USER = "db.user";
 	public static final String CONFIG_KEY_DB_DRIVER = "db.driver";
 	public static final String CONFIG_KEY_DB_PASSWORD = "db.password";
-//	public static final String DB_DEFAULT = "admin";
 	public static final String CONFIG_KEY_DB_MAX_ACTIVE_CONN = "db.conn.active.max";
 	public static final String CONFIG_KEY_DB_WAIT = "db.conn.wait";
-
-	/* Define host name */
-//	public static final String D_PLANE_SW_HOST_NAME                = "D-Plane_SW01";
-//	public static final String OFP_SW_HOST_NAME                    = "OFP_SW01";
 
 	/* Define DMDB node traffic type */
 	public static final String DEVICE_TRAFFIC_TYPE_CLIENT  = "001";
@@ -61,7 +51,4 @@ public class OfpmDefinition {
 
 	/* Define max link ratio */
 	public static final long LINK_MAXIMUM_USED_RATIO = 10000L;
-
-	/* Define open am attribute key */
-//	public static final String KEY_AM_DPLANE_VLAN = "d-vlan";
 }

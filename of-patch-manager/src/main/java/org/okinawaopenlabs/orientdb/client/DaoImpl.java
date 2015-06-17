@@ -1,12 +1,4 @@
-/**
- * @author OOL 1131080355959
- * @date 2014/02/17
- * @TODO
- */
 package org.okinawaopenlabs.orientdb.client;
-
-import static org.okinawaopenlabs.constants.ErrorMessage.*;
-import static org.okinawaopenlabs.constants.OrientDBDefinition.*;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -18,17 +10,15 @@ import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
-import org.okinawaopenlabs.ofpm.utils.OFPMUtils;
-import org.okinawaopenlabs.orientdb.utils.handlers.MapListHandler;
 
 import com.orientechnologies.orient.core.db.document.ODatabaseDocumentTx;
 import com.orientechnologies.orient.core.record.impl.ODocument;
-//import com.orientechnologies.orient.jdbc.OrientJdbcConnection;
 
-/**
- * @author 1131080355959
- *
- */
+import static org.okinawaopenlabs.constants.ErrorMessage.*;
+import static org.okinawaopenlabs.constants.OrientDBDefinition.*;
+import org.okinawaopenlabs.ofpm.utils.OFPMUtils;
+import org.okinawaopenlabs.orientdb.utils.handlers.MapListHandler;
+
 public class DaoImpl implements Dao {
 
 	private static final Logger logger = Logger.getLogger(DaoImpl.class);
@@ -126,10 +116,6 @@ public class DaoImpl implements Dao {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#getPortRidFromDeviceNamePortNumber(java.sql.Connection, java.lang.String, java.lang.Integer)
-	 */
 	@Override
 	public String getPortRidFromDeviceNamePortNumber(Connection conn, String deviceName, Integer portNumber) throws SQLException {
 		final String fname = "getPortRidFromDeviceNamePortNumber";
@@ -154,9 +140,6 @@ public class DaoImpl implements Dao {
 		}
 	}
 
-	/* (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#getDevicePortInfoSetFlowFromPortRid(java.lang.String)
-	 */
 	@Override
 	public List<Map<String, Map<String, Object>>> getDevicePortInfoSetFlowFromPortRid(Connection conn, String portRid) throws SQLException {
 		final String fname = "getDevicePortInfoSetFlowFromPortRid";
@@ -203,10 +186,6 @@ public class DaoImpl implements Dao {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#getCableLinksFromDeviceName(java.sql.Connection, java.lang.String)
-	 */
 	@Override
 	public List<Map<String, Object>> getCableLinksFromDeviceName(Connection conn, String deviceName) throws SQLException {
 		final String fname = "getCableLinks";
@@ -234,10 +213,6 @@ public class DaoImpl implements Dao {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#getPatchWiringsFromDeviceName(java.sql.Connection, java.lang.String)
-	 */
 	@Override
 	public List<Map<String, Object>> getPatchWiringsFromDeviceName(Connection conn, String deviceName) throws SQLException {
 		final String fname = "getPatchWirings";
@@ -265,10 +240,6 @@ public class DaoImpl implements Dao {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#getPatchWiringsFromDeviceNamePortName(java.sql.Connection, java.lang.String, java.lang.String)
-	 */
 	@Override
 	public List<Map<String, Object>> getPatchWiringsFromDeviceNamePortName(Connection conn, String deviceName, String portName) throws SQLException {
 		final String fname = "getPatchWiringsFromDeviceNamePortName";
@@ -289,10 +260,6 @@ public class DaoImpl implements Dao {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#getPatchWiringsFromParentRid(java.sql.Connection, java.lang.String)
-	 */
 	@Override
 	public List<Map<String, Object>> getPatchWiringsFromParentRid(Connection conn, String parentRid) throws SQLException {
 		final String fname = "getPatchWiringsFromParentRid";
@@ -316,10 +283,6 @@ public class DaoImpl implements Dao {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#isContainsPatchWiringFromDeviceNamePortName(java.sql.Connection, java.lang.String, java.lang.String)
-	 */
 	@Override
 	public boolean isContainsPatchWiringFromDeviceNamePortName(Connection conn, String deviceName, String portName) throws SQLException {
 		final String fname = "isContainsPatchWiringFromDeviceNamePortName";
@@ -343,10 +306,6 @@ public class DaoImpl implements Dao {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#isDeviceNameContainedIntoPatchWiring(java.sql.Connection, java.lang.String)
-	 */
 	@Override
 	public boolean isDeviceNameContainedIntoPatchWiring(Connection conn, String deviceName) throws SQLException {
 		final String fname = "isDeviceNameContainedIntoPatchWiring";
@@ -393,10 +352,6 @@ public class DaoImpl implements Dao {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#isPortRidContainedIntoPatchWiring(java.sql.Connection, java.lang.String)
-	 */
 	@Override
 	public boolean isPortRidContainedIntoPatchWiring(Connection conn, String portRid) throws SQLException {
 		final String fname = "isPortRidContainedIntoPatchWiring";
@@ -420,10 +375,6 @@ public class DaoImpl implements Dao {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#deletePatchWiring(java.sql.Connection, java.lang.String, java.lang.String)
-	 */
 	@Override
 	public int deletePatchWiring(Connection conn, String deviceName, String portName) throws SQLException {
 		final String fname = "deletePatchWiring";
@@ -444,10 +395,6 @@ public class DaoImpl implements Dao {
 		return ret;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#getCableLinkFromInPortRid(java.sql.Connection, java.lang.String)
-	 */
 	@Override
 	public Map<String, Object> getCableLinkFromInPortRid(Connection conn, String inPortRid) throws SQLException {
 		final String fname = "getCableLinkFromInPortRid";
@@ -470,10 +417,6 @@ public class DaoImpl implements Dao {
 		return ret;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#getCableLinkFromOutPortRid(java.sql.Connection, java.lang.String)
-	 */
 	@Override
 	public Map<String, Object> getCableLinkFromOutPortRid(Connection conn, String outPortRid) throws SQLException {
 		final String fname = "getCableLinkFromOutPortRid";
@@ -496,10 +439,6 @@ public class DaoImpl implements Dao {
 		return ret;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#createCableLink(java.sql.Connection, java.lang.String, java.lang.String, java.lang.String, java.lang.String)
-	 */
 	@Override
 	public int createCableLink(Connection conn, String deviceName0, String portName0, String deviceName1, String portName1) throws SQLException {
 		final String fname = "createCableLink";
@@ -548,10 +487,6 @@ public class DaoImpl implements Dao {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#deleteCableLink(java.sql.Connection, java.lang.String, java.lang.String, java.lang.String, java.lang.String)
-	 */
 	@Override
 	public int deleteCableLink(Connection conn, String deviceName0, String portName0, String deviceName1, String portName1) throws SQLException {
 		final String fname = "deleteCableLink";
@@ -633,10 +568,6 @@ public class DaoImpl implements Dao {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#updateCableLinkUsedFromPortRid(java.sql.Connection, java.lang.String, int)
-	 */
 	@Override
 	public void updateCableLinkUsedFromPortRid(Connection conn, String portRid, long newUsed) throws SQLException {
 		final String fname = "updateCableLinkUsedFromPortRid";
@@ -657,10 +588,6 @@ public class DaoImpl implements Dao {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#getShortestPath(java.sql.Connection, java.lang.String, java.lang.String)
-	 */
 	@Override
 	public List<Map<String, Object>> getShortestPath(Connection conn, String ridA, String ridZ) throws SQLException {
 		final String fname = "getShortestPath";
@@ -684,10 +611,6 @@ public class DaoImpl implements Dao {
 		return ret;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#insertPatchWiring(java.sql.Connection, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)
-	 */
 	@Override
 	public int insertPatchWiring(Connection conn, String ofpRid, String in, String out, String inDeviceName, String inPortName, String outDeviceName, String outPortName, int sequence) throws SQLException {
 		final String fname = "insertPatchWiring";
@@ -712,10 +635,6 @@ public class DaoImpl implements Dao {
 		return ret;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#getDeviceInfoFromDeviceName(java.sql.Connection, java.lang.String)
-	 */
 	@Override
 	public Map<String, Object> getNodeInfoFromDeviceName(Connection conn, String deviceName) throws SQLException {
 		final String fname = "getDeviceInfo";
@@ -738,10 +657,6 @@ public class DaoImpl implements Dao {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#getNodeInfoList(java.sql.Connection)
-	 */
 	@Override
 	public List<Map<String, Object>> getNodeInfoList(Connection conn) throws SQLException {
 		final String fname = "getNodeInfoList";
@@ -761,10 +676,6 @@ public class DaoImpl implements Dao {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#getDeviceInfoFromDeviceRid(java.sql.Connection, java.lang.String)
-	 */
 	@Override
 	public Map<String, Object> getNodeInfoFromDeviceRid(Connection conn, String nodeRid) throws SQLException {
 		final String fname = "getDeviceInfoFromDeviceRid";
@@ -813,10 +724,6 @@ public class DaoImpl implements Dao {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#createNodeInfo(java.sql.Connection, java.lang.String, java.lang.String, java.lang.String, java.lang.String)
-	 */
 	@Override
 	public int createNodeInfo(Connection conn, String deviceName, String deviceType, String datapathId, String ofcIp) throws SQLException {
 		final String fname = "createNodeInfo";
@@ -840,10 +747,6 @@ public class DaoImpl implements Dao {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#updateNodeInfo(java.sql.Connection, java.lang.String, java.lang.String, java.lang.String, java.lang.String)
-	 */
 	@Override
 	public int updateNodeInfo(Connection conn, String keyDeviceName, String deviceName, String datapathId, String ofcIp) throws SQLException {
 		final String fname = "updateNodeInfo";
@@ -891,10 +794,6 @@ public class DaoImpl implements Dao {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#deleteNodeInfo(java.sql.Connection, java.lang.String)
-	 */
 	@Override
 	public int deleteNodeInfo(Connection conn, String deviceName) throws SQLException {
 		final String fname = "deleteNodeInfo";
@@ -944,10 +843,6 @@ public class DaoImpl implements Dao {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#createPortInfo(java.sql.Connection, java.lang.String, int, java.lang.String)
-	 */
 	@Override
 	public int createPortInfo(Connection conn, String portName, Integer portNumber, String band, String deviceName) throws SQLException {
 		final String fname = "createPortInfo";
@@ -1020,10 +915,6 @@ public class DaoImpl implements Dao {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#updatePortInfo(java.sql.Connection, java.lang.String, java.lang.String, java.lang.String, int)
-	 */
 	@Override
 	public int updatePortInfo(Connection conn, String keyPortName, String keyDeviceName, String portName, Integer portNumber, String band) throws SQLException {
 		final String fname = "updatePortInfo";
@@ -1075,10 +966,6 @@ public class DaoImpl implements Dao {
 		return ret;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#deletePortInfo(java.sql.Connection, java.lang.String, java.lang.String)
-	 */
 	@Override
 	public int deletePortInfo(Connection conn, String portName, String deviceName) throws SQLException {
 		final String fname = "deletePortInfo";
@@ -1122,10 +1009,6 @@ public class DaoImpl implements Dao {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#getPortInfoFromPortName(java.sql.Connection, java.lang.String, java.lang.String)
-	 */
 	@Override
 	public Map<String, Object> getPortInfoFromPortName(Connection conn, String deviceName, String portName) throws SQLException {
 		final String fname = "getPortInfoFromPortName";
@@ -1148,9 +1031,6 @@ public class DaoImpl implements Dao {
 		}
 	}
 
-	/* (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#getPortInfoFromPortRid(java.sql.Connection, java.lang.String)
-	 */
 	@Override
 	public Map<String, Object> getPortInfoFromPortRid(Connection conn, String rid) throws SQLException {
 		final String fname = "getPortInfoFromPortRid";
@@ -1177,10 +1057,6 @@ public class DaoImpl implements Dao {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#getPortRidFromDeviceNamePortName(java.sql.Connection, java.lang.String, java.lang.String)
-	 */
 	@Override
 	public String getPortRidFromDeviceNamePortName(Connection conn, String deviceName, String portName) throws SQLException {
 		final String fname = "getPortRidFromDeviceNamePortName";
@@ -1207,10 +1083,6 @@ public class DaoImpl implements Dao {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#getPortInfoListFromDeviceName(java.sql.Connection, java.lang.String)
-	 */
 	@Override
 	public List<Map<String, Object>> getPortInfoListFromDeviceName(Connection conn, String deviceName) throws SQLException {
 		final String fname = "getPortInfoListFromDeviceName";
@@ -1260,9 +1132,6 @@ public class DaoImpl implements Dao {
 		}
 	}
 
-	/* (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#getNodeInfoFromPortRid(java.sql.Connection, java.lang.String)
-	 */
 	@Override
 	public Map<String, Object> getDeviceInfoFromDeviceRid(Connection conn, String rid) throws SQLException {
 		final String fname = "getDeviceInfoFromDeviceRid";
@@ -1288,10 +1157,6 @@ public class DaoImpl implements Dao {
 		}
 	}
 
-	/* (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#getInternalMacFromDeviceNameInPortSrcMacDstMac(java.lang.String, java.lang.String, java.lang.String, java.lang.String)
-	 */
-	//@Override
 	static synchronized public String getInternalMacFromDeviceNameInPortSrcMacDstMac(ConnectionUtilsJdbc utilsJdbc, Connection conn, String deviceName, String inPort, String srcMac, String dstMac) throws SQLException {
 		final String fname = "getInternalMacFromDeviceNameInPortSrcMacDstMac";
 		if (logger.isTraceEnabled()){
@@ -1329,10 +1194,6 @@ public class DaoImpl implements Dao {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#getInternalMacListFromDeviceNameInPort(java.sql.Connection, java.lang.String, java.lang.String)
-	 */
 	@Override
 	public List<String> getInternalMacListFromDeviceNameInPort(Connection conn, String deviceName, String inPort) throws SQLException {
 		final String fname = "getInternalMacListFromDeviceNameInPort";
@@ -1358,10 +1219,6 @@ public class DaoImpl implements Dao {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#deleteInternalMac(java.sql.Connection, java.lang.String, java.lang.String)
-	 */
 	@Override
 	public int deleteInternalMac(Connection conn, String deviceName, int inPort) throws SQLException {
 		final String fname = "deleteInternalMac";
@@ -1382,10 +1239,6 @@ public class DaoImpl implements Dao {
 		return ret;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#getInternalMacInfoListFromDeviceNameInPort(java.sql.Connection, java.lang.String, java.lang.Integer)
-	 */
 	@Override
 	public List<Map<String, Object>> getInternalMacInfoListFromDeviceNameInPort(Connection conn, String deviceName, Integer portNumber) throws SQLException {
 		final String fname = "getInternalMacInfoListFromDeviceNameInPort";
@@ -1413,10 +1266,6 @@ public class DaoImpl implements Dao {
 		}
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.okinawaopenlabs.orientdb.client.Dao#getPortBandFromDeviceNamePortName(java.sql.Connection, java.lang.String, java.lang.String)
-	 */
 	@Override
 	public String getPortBandFromDeviceNamePortName(Connection conn, String deviceName, String portName) throws SQLException {
 		final String fname = "getPortBandFromDeviceNamePortName";

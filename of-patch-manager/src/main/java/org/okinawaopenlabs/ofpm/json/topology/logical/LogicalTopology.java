@@ -4,13 +4,13 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import org.apache.commons.lang3.ObjectUtils;
+
 import org.okinawaopenlabs.ofpm.json.device.Node;
 import org.okinawaopenlabs.ofpm.json.device.PortData;
 import org.okinawaopenlabs.ofpm.json.device.PortInfo;
-
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 public class LogicalTopology implements Cloneable {
 	private List<OfpConDeviceInfo> nodes;

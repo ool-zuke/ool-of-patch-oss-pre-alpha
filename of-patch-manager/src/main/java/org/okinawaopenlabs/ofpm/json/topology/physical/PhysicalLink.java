@@ -3,10 +3,10 @@ package org.okinawaopenlabs.ofpm.json.topology.physical;
 import java.lang.reflect.Type;
 import java.util.List;
 
-import org.okinawaopenlabs.ofpm.json.device.PortData;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+
+import org.okinawaopenlabs.ofpm.json.device.PortData;
 
 public class PhysicalLink {
 	private String band;

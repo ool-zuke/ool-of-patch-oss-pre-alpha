@@ -1,8 +1,3 @@
-/**
- * @author OOL 1131080355959
- * @date 2014/02/17
- * @TODO
- */
 package org.okinawaopenlabs.orientdb.client;
 
 import java.sql.Connection;
@@ -10,11 +5,6 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
-
-/**
- * @author 1131080355959
- *
- */
 public interface Dao {
 
 	/**

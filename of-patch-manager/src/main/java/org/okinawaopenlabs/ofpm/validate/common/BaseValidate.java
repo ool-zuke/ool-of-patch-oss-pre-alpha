@@ -1,21 +1,12 @@
-/**
- * @author OOL 1131080355959
- * @date 2014/02/06
- * @TODO TODO
- */
 package org.okinawaopenlabs.ofpm.validate.common;
 
 import java.util.List;
 
-import static org.okinawaopenlabs.constants.ErrorMessage.*;
-
 import org.apache.commons.lang3.StringUtils;
+
+import static org.okinawaopenlabs.constants.ErrorMessage.*;
 import org.okinawaopenlabs.ofpm.exception.ValidateException;
 
-/**
- * @author 1131080355959
- *
- */
 public abstract class BaseValidate {
 	/**
 	 * Determine if Object is null.

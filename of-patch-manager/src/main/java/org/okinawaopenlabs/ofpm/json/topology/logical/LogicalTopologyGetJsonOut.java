@@ -2,10 +2,10 @@ package org.okinawaopenlabs.ofpm.json.topology.logical;
 
 import java.lang.reflect.Type;
 
-import org.okinawaopenlabs.ofpm.json.common.BaseResponse;
-
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+
+import org.okinawaopenlabs.ofpm.json.common.BaseResponse;
 
 public class LogicalTopologyGetJsonOut extends BaseResponse {
 	private LogicalTopology result = new LogicalTopology();

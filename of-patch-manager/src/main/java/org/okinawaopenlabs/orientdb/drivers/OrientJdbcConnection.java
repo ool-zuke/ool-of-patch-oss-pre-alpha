@@ -8,11 +8,6 @@ import java.util.Properties;
 import com.orientechnologies.orient.core.db.document.ODatabaseDocumentTx;
 import com.orientechnologies.orient.core.tx.OTransaction.TXTYPE;
 
-/**
- *
- * @author user
- *
- */
 public class OrientJdbcConnection extends com.orientechnologies.orient.jdbc.OrientJdbcConnection {
 
 	private ODatabaseDocumentTx database;
