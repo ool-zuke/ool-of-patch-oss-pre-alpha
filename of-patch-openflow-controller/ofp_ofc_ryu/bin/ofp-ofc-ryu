@@ -12,7 +12,6 @@
 PATH=/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin
 
 DESC="ofp-ofc-ryu"
-#USER=ool-ofp-ofc
 NAME=ofp-ofc-ryu
 
 APPDIR=/usr/local/lib/ofp_ofc_ryu
@@ -49,14 +48,12 @@ fi
 do_start()
 {
   start-stop-daemon --start --quiet --background --make-pidfile \
-    --chuid $USER \
     --chdir $APPDIR \
     --pidfile $PIDFILE \
     --exec $DAEMON \
     --test > /dev/null \
     || return 1
   start-stop-daemon --start --quiet --background --make-pidfile \
-    --chuid $USER \
     --chdir $APPDIR \
     --pidfile $PIDFILE \
     --exec $DAEMON \
