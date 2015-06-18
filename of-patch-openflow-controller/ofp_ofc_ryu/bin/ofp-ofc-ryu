@@ -22,9 +22,10 @@ PIDFILE=/var/run/$NAME.pid
 
 WSGI_PORT=28080
 WSGI_HOST="localhost"
+LISTEN_PORT=6641
 
 DAEMON=/usr/local/bin/ryu-manager
-DAEMON_ARGS="--wsapi-port $WSGI_PORT --wsapi-host $WSGI_HOST $APPFILE"
+DAEMON_ARGS="--ofp-tcp-listen-port $LISTEN_PORT --wsapi-port $WSGI_PORT --wsapi-host $WSGI_HOST $APPFILE"
 
 SCRIPTNAME=/etc/init.d/$NAME
 
